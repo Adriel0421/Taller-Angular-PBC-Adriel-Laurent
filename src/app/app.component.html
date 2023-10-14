@@ -1,0 +1,88 @@
+
+
+<div class="box">
+
+  <h2 class="h2">{{ title }} </h2>
+
+  <form font-family="sans-serif">
+    <span>Nombre Completo</span>
+    <input class="input"  type="text" placeholder="Nombre" [value]="persona.nombre"><p>
+      <span>Ingresa Edad</span>
+      <input class="input" type="text" placeholder="Edad" [value]="persona.edad"><p>
+        <span>Selecciona Genero</span>
+        <select class="select" [value]="sexo">
+      
+          <option disabled [value]="sexo.none">{{option}}</option>
+      
+          <option [value]="sexo.mas">{{men}}</option>
+      
+          <option [value]="sexo.fem">{{fem}}</option>
+      
+          <option [value]="sexo.otro">{{otro}}</option>
+     
+        </select><p>
+          <span>Ingresar Peso (kg)</span>
+          <input class="input" type="number" name="peso" placeholder="Peso (kg)" [value]="persona.peso" [(ngModel)]="persona.peso"><p>
+          <span>Ingresar Altura (m)</span>
+          <input class="input" type="number" name="altura" step="0.01" placeholder="Altura (m)" [value]="persona.altura" [(ngModel)]="persona.altura">
+          <p align="center">
+          <textarea rows="3" cols="35" font-family="sans-serif" placeholder="Resultado de tu IMC...">{{this.persona.IMC}} - Por lo tanto tu rango es..</textarea>
+          <textarea rows="3" cols="35" font-family="sans-serif" placeholder="...">{{this.persona.rango}}</textarea>
+          <p align="center">
+          <button class="button" (click)="calcularIMC()"> ▶ </button>
+  </form>
+
+  
+</div >
+
+<div class="box2" >
+
+  <table>
+    <thead>
+      <tr>
+        <th> Valor IMC </th>
+        <th> Clasificación </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr> 
+        <td> Por debajo de 18.5 </td>
+        <td> Bajo peso </td>
+      </tr>
+
+      <tr> 
+        <td> 18.5 – 24.9 </td>
+        <td> Normal </td>
+      </tr>
+
+      <tr> 
+        <td> 25.0 – 29.9 </td>
+        <td> Sobrepeso </td>
+      </tr>
+
+      <tr> 
+        <td> 30.0 o más </td>
+        <td> Obesidad </td>
+      </tr>
+
+
+
+    </tbody>
+
+
+
+  </table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
